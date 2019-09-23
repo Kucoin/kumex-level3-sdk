@@ -102,15 +102,22 @@ addOrder和cancelOrder两个接口，不需要查询订单信息，不需要查�
 2，直接带参数运行编译好的二进制程序
 
 __./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM__
+
 ![](img/run_L3.jpg)
 
 -c 参数是指定配置文件
+
 -symbol 参数是运行的交易对
+
 -p 是rpc监听的端口号
+
 -rpckey 是会写入到redis的本程序的运行端口，方便集群部署的自动化
 
-3，进入kumex-level3-sdk/demo/python-demo/demo 目录 运行
+
+3，保持kumex_market运行的情况下，进入kumex-level3-sdk/demo/python-demo/demo 目录 运行
+
 __python KuMEXOrderBook.py__
+
 ![](img/run_pydemo.jpg)
 
 在这个demo中我们再本地展示了买卖盘上下12档的数据，没有调用任何http的方法和线上完全一致且实时同步，更高级的是， 你甚至能知道每一档价格，各个订单排序的先后。
