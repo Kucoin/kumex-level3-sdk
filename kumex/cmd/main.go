@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/JetBlink/orderbook/base"
-	"github.com/Kucoin/kumex-market/kumex"
-	"github.com/Kucoin/kumex-market/utils/recovery"
+	"github.com/Kucoin/kumex-level3-sdk/kumex"
+	"github.com/Kucoin/kumex-level3-sdk/utils/recovery"
 )
 
 func main() {

@@ -3,7 +3,7 @@ package kumex
 import (
 	"net/http"
 
-	"github.com/Kucoin/kumex-market/kumex/http_client"
+	"github.com/Kucoin/kumex-level3-sdk/kumex/http_client"
 )
 
 func (kumex *KuMEX) AtomicFullOrderBook(symbol string) (*http_client.Response, error) {

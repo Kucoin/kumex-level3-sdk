@@ -9,11 +9,11 @@ import (
 
 	"github.com/JetBlink/orderbook/base"
 	"github.com/JetBlink/orderbook/level3"
-	"github.com/Kucoin/kumex-market/helper"
-	"github.com/Kucoin/kumex-market/kumex"
-	"github.com/Kucoin/kumex-market/level3stream"
-	"github.com/Kucoin/kumex-market/utils/log"
-	"github.com/Kucoin/kumex-market/utils/recovery"
+	"github.com/Kucoin/kumex-level3-sdk/helper"
+	"github.com/Kucoin/kumex-level3-sdk/kumex"
+	"github.com/Kucoin/kumex-level3-sdk/level3stream"
+	"github.com/Kucoin/kumex-level3-sdk/utils/log"
+	"github.com/Kucoin/kumex-level3-sdk/utils/recovery"
 	"github.com/shopspring/decimal"
 )
 
