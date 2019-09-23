@@ -22,7 +22,7 @@ go get github.com/shopspring/decimal
 CGO_ENABLED=0 go build -ldflags '-s -w' -o kumex_market kumex_market.go
 ```
 
-or you can download the latest available release.
+or you can download the latest available [release](https://github.com/Kucoin/kumex-level3-sdk/releases)
 
 ## Usage
 
