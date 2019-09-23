@@ -202,7 +202,6 @@ func (wc *WebSocketClient) Connect() (<-chan *WebSocketDownstreamMessage, <-chan
 	u := fmt.Sprintf("%s?%s", s.Endpoint, q.Encode())
 	//todo
 	//u = "wss://push1.kumex.com/endpoint?connectId=0123456789&token=vYNlCtbz4XPx1KkMKBqDxnBtmmfe4geLqyIP-zXfbBjChc6I4bRDQZaH6Lz5cP8Mm6TWeK1s3HndPdyT_s2kTEtvmDyO-YuLqpHKrOcJW3XCG6g1mGlZYcmYjlqxIPjJCcbzfUuok_A%3D.aslE2OsCtdRSXw_u088vBw%3D%3D"
-	//log.Println("todo 删除 固定 ws 连接url", u)
 
 	// Ignore verify tls
 	websocket.DefaultDialer.TLSClientConfig = &tls.Config{InsecureSkipVerify: wc.skipVerifyTls}
