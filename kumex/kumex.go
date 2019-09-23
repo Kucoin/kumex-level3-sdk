@@ -3,7 +3,7 @@ package kumex
 import (
 	"time"
 
-	"github.com/Kucoin/kumex-market/kumex/http_client"
+	"github.com/Kucoin/kumex-level3-sdk/kumex/http_client"
 )
 
 type KuMEX struct {

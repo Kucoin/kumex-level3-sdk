@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 
-	"github.com/Kucoin/kumex-market/app"
-	"github.com/Kucoin/kumex-market/utils/log"
+	"github.com/Kucoin/kumex-level3-sdk/app"
+	"github.com/Kucoin/kumex-level3-sdk/utils/log"
 	"github.com/joho/godotenv"
 )
 
