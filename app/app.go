@@ -5,12 +5,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/Kucoin/kumex-market/api"
-	"github.com/Kucoin/kumex-market/builder"
-	"github.com/Kucoin/kumex-market/events"
-	"github.com/Kucoin/kumex-market/kumex"
-	"github.com/Kucoin/kumex-market/service"
-	"github.com/Kucoin/kumex-market/utils/log"
+	"github.com/Kucoin/kumex-level3-sdk/api"
+	"github.com/Kucoin/kumex-level3-sdk/builder"
+	"github.com/Kucoin/kumex-level3-sdk/events"
+	"github.com/Kucoin/kumex-level3-sdk/kumex"
+	"github.com/Kucoin/kumex-level3-sdk/service"
+	"github.com/Kucoin/kumex-level3-sdk/utils/log"
 )
 
 type App struct {

@@ -1,0 +1,7 @@
+.idea
+vendor
+
+kumex_market
+kumex-market*
+.env.local
+*.pyc

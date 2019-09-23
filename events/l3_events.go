@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"sync"
 
-	"github.com/Kucoin/kumex-market/helper"
-	"github.com/Kucoin/kumex-market/level3stream"
-	"github.com/Kucoin/kumex-market/service"
-	"github.com/Kucoin/kumex-market/utils/log"
+	"github.com/Kucoin/kumex-level3-sdk/helper"
+	"github.com/Kucoin/kumex-level3-sdk/level3stream"
+	"github.com/Kucoin/kumex-level3-sdk/service"
+	"github.com/Kucoin/kumex-level3-sdk/utils/log"
 )
 
 type Watcher struct {

@@ -111,7 +111,7 @@ __./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM__
 
 -p 是rpc监听的端口号
 
--rpckey 是会写入到redis的本程序的运行端口，方便集群部署的自动化
+-rpckey 是会写入到redis的本程序的运行端口(redis key: kumexMarket:rpcKey:{$symbol}:{$rpckey})，方便集群部署的自动化
 
 
 3，保持kumex_market运行的情况下，进入kumex-level3-sdk/demo/python-demo/demo 目录 运行

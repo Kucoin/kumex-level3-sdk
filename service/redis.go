@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/Kucoin/kumex-market/utils/log"
+	"github.com/Kucoin/kumex-level3-sdk/utils/log"
 	"github.com/go-redis/redis"
 )
 

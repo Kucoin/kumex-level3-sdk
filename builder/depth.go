@@ -1,6 +1,6 @@
 package builder
 
-import "github.com/Kucoin/kumex-market/level3stream"
+import "github.com/Kucoin/kumex-level3-sdk/level3stream"
 
 //[5]interface{}{"orderTime", "orderId", "price", "size", "ts"}
 type DepthResponse struct {

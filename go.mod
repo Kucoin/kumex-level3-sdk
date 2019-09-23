@@ -1,4 +1,4 @@
-module github.com/Kucoin/kumex-market
+module github.com/Kucoin/kumex-level3-sdk
 
 require (
 	github.com/JetBlink/orderbook v1.0.0
