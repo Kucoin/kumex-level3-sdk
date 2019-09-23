@@ -116,7 +116,7 @@ func (b *Builder) playback() {
 			}
 
 			if fullOrderBook != nil && fullOrderBook.Sequence < firstSequence {
-				log.Error("获取 %d 全量数据太小", fullOrderBook.Sequence)
+				log.Error("full data Sequence %d is too small", fullOrderBook.Sequence)
 				fullOrderBook = nil
 				continue
 			}
@@ -218,7 +218,7 @@ func (b *Builder) updateSequence(msg *level3stream.StreamDataModel) (bool, error
 
 	if fullOrderBookSequenceValue+1 != msg.Sequence {
 		return false, errors.New(fmt.Sprintf(
-			"currentSequence: %d, msgSequence: %d, the sequence is not continuous, 当前chanLen: %d",
+			"currentSequence: %d, msgSequence: %d, the sequence is not continuous, current chanLen: %d",
 			b.fullOrderBook.Sequence,
 			msg.Sequence,
 			len(b.Messages),
@@ -230,7 +230,6 @@ func (b *Builder) updateSequence(msg *level3stream.StreamDataModel) (bool, error
 	return false, nil
 }
 
-//todo 大单特别注意
 func (b *Builder) updateOrderBook(msg *level3stream.StreamDataModel) {
 	//[3]string{"orderId", "price", "size"}
 	//var item = [3]string{msg.OrderId, msg.Price, msg.Size}

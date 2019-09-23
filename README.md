@@ -2,7 +2,7 @@
 
 ## guide
   [guide](docs/guide_CN.md)
-  
+
 ## Installation
 
 1. install dependencies
@@ -20,7 +20,7 @@ go get github.com/shopspring/decimal
 
 ```
 CGO_ENABLED=0 go build -ldflags '-s -w' -o kumex_market kumex_market.go
-``` 
+```
 
 or you can download the latest available release.
 
@@ -46,6 +46,23 @@ or you can download the latest available release.
     ```
     ./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM
     ```
+    
+
+## Docker Usage
+
+1. Build docker image
+
+   ```
+   docker build -t kumex_market .
+   ```
+
+1. [vim .env](#usage)
+
+1. Run
+
+  ```
+  docker run --rm -it -v $(pwd)/.env:/app/.env --net=host kumex_market
+  ```
 
 ## RPC Method
 
@@ -93,5 +110,5 @@ see:[python use_level3 demo](./demo/python-demo/demo)
     ```
     command: python demo.py
     describe: you sand order always buy1,until your order is match.(easy strategy)
-    ```    
-  
+    ```
+
