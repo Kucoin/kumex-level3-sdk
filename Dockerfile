@@ -11,6 +11,9 @@ RUN cd /go/src/github.com/Kucoin/kumex-level3-sdk \
 
 FROM debian:stretch
 
+RUN apt-get update \
+    && apt-get install ca-certificates -y
+
 COPY --from=builder /go/bin/kumex_market /usr/local/bin/
 
 # .env => /app/.env
