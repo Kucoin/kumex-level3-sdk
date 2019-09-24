@@ -45,7 +45,7 @@ func NewApp(symbol string, rpcPort string, rpcKey string) *App {
 		panic("rpckey is required")
 	}
 
-	apiService := kumex.NewKuMEX(os.Getenv("API_BASE_URI"), true, 30*time.Second)
+	apiService := kumex.NewKuMEX(os.Getenv("API_BASE_URI"), false, 30*time.Second)
 	level3Builder := builder.NewBuilder(apiService, symbol)
 
 	redisPool := service.NewRedis(redisHost, rpcKey, symbol, rpcPort)
