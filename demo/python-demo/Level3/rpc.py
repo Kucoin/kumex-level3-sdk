@@ -1,8 +1,14 @@
 import json
 import socket
-from tools.tools import singleton
-import os, sys
+import os
+import sys
 
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+from tools.config import rpc_config
+# from tools.tools import singleton
+from tools.tools import singleton
 
 @singleton
 class KuMEXRpc(object):
@@ -70,12 +76,13 @@ class KuMEXRpc(object):
             raise Exception("rpc get ticker fail: sequence Is Null")
         return ticker
 
-    def add_event_client_id(self, data):
-        channel = 'mm:notice:chan'
+    def add_event_client_id(self, data, channel):
         datas = {}
         for i in data:
             datas[i] = [channel]
         return self.call("AddEventClientOidsToChannels", data=datas)
+
+krpc = KuMEXRpc(rpc_config['host'], rpc_config['port'], rpc_config['token'])
 
 
 if __name__ == '__main__':

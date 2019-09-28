@@ -4,19 +4,28 @@ import hmac
 import hashlib
 import base64
 import time
+import uuid
+import os
+import sys
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 from urllib.parse import urljoin
+from tools.config import account_config
 
 
-class KuMEXApi(object):
 
-    def __init__(self, key, secret, passphrase, is_test=True):
+class KumexApi(object):
+
+    def __init__(self, is_test=False):
         if is_test:
             self.url = 'https://sandbox-api.kumex.com'
         else:
             self.url = 'https://api.kumex.com'
-        self.apiKey = key
-        self.secret = secret
-        self.Passphrase = passphrase
+        self.apiKey = account_config['key']
+        self.secret = account_config['secret']
+        self.Passphrase = account_config['passphrase']
 
     def requstdata(self, method, uri, params=None):
         url = urljoin(self.url, uri)
@@ -100,6 +109,8 @@ class KuMEXApi(object):
             data['bids'] = [bids[2], bids[3]]
             data['asks'] = [asks[2], asks[3]]
         return data
+
+k_api = KumexApi()
 
 
 if __name__ == '__main__':

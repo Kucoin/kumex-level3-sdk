@@ -3,7 +3,7 @@ redis_config = {
     'port': 6379,
     'db': None,
     'password': None,
-    'clientId_channel': ''
+    'clientId_channel': 'order:info'
 }
 
 rpc_config = {
