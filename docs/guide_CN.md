@@ -89,8 +89,8 @@ addOrder和cancelOrder两个接口，不需要查询订单信息，不需要查�
 
 ## 怎么使用L3
 
-为了方便大家使用L3，我们提供kumex的L3的开箱即用的SDK以及python的demo。它的地址是https://github.com/Kucoin/kumex-level3-sdk。
-SDK包含两个功能
+为了方便大家使用L3，我们提供kumex的L3的开箱即用的SDK以及python的demo。它的地址是https://github.com/Kucoin/kumex-level3-sdk
+。SDK包含两个功能
 
 1，本地构建好的orderbook，可以直接使用
 
