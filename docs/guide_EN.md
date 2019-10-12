@@ -23,7 +23,6 @@ Well, what would it be like if the strategy is carried out via the traditional R
 
 
 
-相信很多人在一开始做量化交易的时候都是这样写策略的，在一个循环里面不断的去下单然后一直去拿价格并且获取订单信息来做进一步的操作。相信你们肯定会遇到下面这几个问题，
 It is a rather basic strategy frequently used by quant traders, who target arbitrage profits between the price spread by repeatedly place buy/sell orders based on the complete order data. Thus, it’s also quite common to face the following issues:
 
 1. How do you know for sure the order is successfully executed? As sometimes the order might actually be executed even the system reminds you of rollback fails or it throws an exception due to network failures;
@@ -81,7 +80,7 @@ Now let’s see how L3 address the above-mentioned issues that REST might have d
 7. Concerns over API frequency control - interface calling frequency will significantly drop, as you only trigger two requests, addOrder and cancelOrder. If, however, under such circumstance, the frequency is still triggered, please do contact KuCoin/KuMex, I am more than just sure that they would like to offer extra support to API user like you.
 8. Ill-timed. The 30 millisecond-latency for GetOrderInfo to deliver feedback, which makes real-time data push and perfect efficiency of implementing new strategy highly unlikely, is now solved, as L3 data push is much faster.
 9. No accessibility to the data of other orders. The issue is now addressed as L3 push full order data, which include every change of each individual order, so that the user could monitor the entire market and make real-time adjustment.
-既然L3有这么多好处，接下的一篇文章，我们会讲到L3的使用方法并且提供一个完整可用的例子以及一个SDK。
+
 I believe the above-mentioned edges are convincing enough, now the question would be how to make use of L3. Here comes on applicable use case and an SDK.
 
 
@@ -113,7 +112,7 @@ __./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM__
 
 
 
-3，keep kumex_market run ，into kumex-level3-sdk/demo/python-demo/demo files to run python KuMEXOrderBook.py
+3. keep kumex_market run ，into kumex-level3-sdk/demo/python-demo/demo files to run python KuMEXOrderBook.py
 
 
 __python KuMEXOrderBook.py__
@@ -121,6 +120,7 @@ __python KuMEXOrderBook.py__
 ![](img/run_pydemo.jpg)
 
 In this demo, we illustrate 12-grade data on each of the ask and bid side locally without calling any http methods but still being able to achieve synchronization. What’s better is that it’s all transparent, the price of each grade and the priority queue of the orders.
+
 
 4. The orderMonitor.py file offers means to monitor the order processing, as stated above, which will need a middleware such as redis to provide data subscription and consumption
 
