@@ -71,6 +71,7 @@ Plus, L3 data-push is counted as the most accurate data delivery, while RECEIVED
 
 On top of maintaining your own order status, L3 also helps to architect a local market database. Do I need to specify the difference between calling market data from local server and remote server? Not to mention the real-time local market database details the exact priority queue of all the orders.
 Now let’s see how L3 address the above-mentioned issues that REST might have difficulty to fix:
+
 1. How do you know for sure the order is successfully executed - with RECEIVE being delivered.
 2. The possible inaccuracy of GetOrderInfo push, as the order might be executed in stages - L3 data push delivers precise and complete order information, no need for getOrderInfo anymore. 
 3. How do you know for sure the order is canceled - with DONE being delivered and attributed to the reason of CANCELED.
@@ -100,26 +101,26 @@ Now, please allow me to share the method of application of L3
 
 2. Complided binary program running with parameters
 
-__./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM__
+    __./kumex_market -c .env -symbol XBTUSDM -p 9090 -rpckey XBTUSDM__
 
-![](img/run_L3.jpg)
+    ![](img/run_L3.jpg)
 
--c stands for configuration files
+    -c stands for configuration files
 
--symbol stands for available trading pairs
+    -symbol stands for available trading pairs
 
--rpckey stands for running ports programmed in redis, aiming at automated cluster deployment
+    -rpckey stands for running ports programmed in redis, aiming at automated cluster deployment
 
 
 
 3. keep kumex_market run ，into kumex-level3-sdk/demo/python-demo/demo files to run python KuMEXOrderBook.py
 
 
-__python KuMEXOrderBook.py__
+    __python KuMEXOrderBook.py__
 
-![](img/run_pydemo.jpg)
+    ![](img/run_pydemo.jpg)
 
-In this demo, we illustrate 12-grade data on each of the ask and bid side locally without calling any http methods but still being able to achieve synchronization. What’s better is that it’s all transparent, the price of each grade and the priority queue of the orders.
+    In this demo, we illustrate 12-grade data on each of the ask and bid side locally without calling any http methods but still being able to achieve synchronization. What’s better is that it’s all transparent, the price of each grade and the priority queue of the orders.
 
 
 4. The orderMonitor.py file offers means to monitor the order processing, as stated above, which will need a middleware such as redis to provide data subscription and consumption
