@@ -1,4 +1,4 @@
-# 在kumex使用L3
+# Use L3 in Kumex
 
 Starting late 2017 when we saw the bullish crypto market, Bitcoin has gained increasing attention from a growing population of investors, with the group coders (in a broad sense) being one major composition.
 These guys, with solid programming know-how, managed to earn their first barrels of gold by applying stock and futures trading strategies to the crypto world via Application Program Interface (API) offered by crypto exchanges.
