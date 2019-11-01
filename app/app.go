@@ -3,6 +3,7 @@ package app
 import (
 	"encoding/json"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/Kucoin/kumex-level3-sdk/api"
@@ -48,7 +49,14 @@ func NewApp(symbol string, rpcPort string, rpcKey string) *App {
 	apiService := kumex.NewKuMEX(os.Getenv("API_BASE_URI"), false, 30*time.Second)
 	level3Builder := builder.NewBuilder(apiService, symbol)
 
-	redisPool := service.NewRedis(redisHost, rpcKey, symbol, rpcPort)
+	var redisPassword = os.Getenv("REDIS_PASSWORD")
+	var redisDBEnv = os.Getenv("REDIS_DB")
+	var redisDB = 0
+	if redisDBEnv != "" {
+		//
+		redisDB, _ = strconv.Atoi(redisDBEnv)
+	}
+	redisPool := service.NewRedis(redisHost, redisPassword, redisDB, rpcKey, symbol, rpcPort)
 	eventWatcher := events.NewWatcher(redisPool)
 
 	return &App{
