@@ -48,7 +48,9 @@ func NewApp(symbol string, rpcPort string, rpcKey string) *App {
 	apiService := kumex.NewKuMEX(os.Getenv("API_BASE_URI"), false, 30*time.Second)
 	level3Builder := builder.NewBuilder(apiService, symbol)
 
-	redisPool := service.NewRedis(redisHost, rpcKey, symbol, rpcPort)
+	var redisPassword = os.Getenv("REDIS_PASSWORD")
+
+	redisPool := service.NewRedis(redisHost, redisPassword, rpcKey, symbol, rpcPort)
 	eventWatcher := events.NewWatcher(redisPool)
 
 	return &App{
