@@ -11,7 +11,7 @@ type Redis struct {
 
 const RedisKeyPrefix = "kumexMarket:rpcKey:"
 
-func NewRedis(addr ,password string, rpcKey string, symbol string, rpcPort string) *Redis {
+func NewRedis(addr, password string, db int, rpcKey string, symbol string, rpcPort string) *Redis {
 	if addr == "" {
 		return nil
 	}
@@ -20,7 +20,7 @@ func NewRedis(addr ,password string, rpcKey string, symbol string, rpcPort strin
 	redisPool := redis.NewClient(&redis.Options{
 		Addr:     addr,
 		Password: password, // no password set
-		DB:       0,  // use default DB
+		DB:       db,       // use default DB
 		//DialTimeout:  10 * time.Second,
 		//ReadTimeout:  30 * time.Second,
 		//WriteTimeout: 30 * time.Second,
