@@ -1,9 +1,9 @@
-# Use L3 in Kumex
+# Use L3 in KuMEX
 
-Starting late 2017 when we saw the bullish crypto market, Bitcoin has gained increasing attention from a growing population of investors, with the group coders (in a broad sense) being one major composition.
+Starting late 2017 when we saw the bullish crypto market, BitCoin has gained increasing attention from a growing population of investors, with the group coders (in a broad sense) being one major composition.
 These guys, with solid programming know-how, managed to earn their first barrels of gold by applying stock and futures trading strategies to the crypto world via Application Program Interface (API) offered by crypto exchanges.
 For most coders, to actually monetize the coding gives great sense of achievements, as well as financial success. Just picture yourself lying snug in bed while a machine printing money non-stop at your hand, what more can you ask for?
-However, without L3, it’s like you have the money print template, the ink and paper, but you don’t know how to operate the machine. Okay, here comes the handbook of using L3 on KuMex.
+However, without L3, it’s like you have the money print template, the ink and paper, but you don’t know how to operate the machine. Okay, here comes the handbook of using L3 on KuMEX.
 
 
 ## Why to use L3
@@ -53,7 +53,7 @@ These are just a few among many issues, which after all are related to the follo
 3. How to avoid API frequency control conducted by the exchange?
 
 These three points state the core demand of high-frequency traders, which could be fulfilled via L3, as it pushes the complete market data. So now, it comes to the questions of what exactly does complete market data include, and how to apply the data to the trading strategies?
-Take KuCoin (KuMex similarly) as an example, if you subscribe L3 data via Websocket, you will receive full data tagged as (not limited in) RECEIVED, OPEN, UPDATE, MATCH, DONE. For the details, please check the official API documents here:
+Take KuCoin (KuMEX similarly) as an example, if you subscribe L3 data via Websocket, you will receive full data tagged as (not limited in) RECEIVED, OPEN, UPDATE, MATCH, DONE. For the details, please check the official API documents here:
 
 
 https://docs.kucoin.com/#full-matchengine-data-level-3
@@ -64,7 +64,7 @@ As for the usage of L3, we will elaborate the detailed methods in the next artic
 
 Now, let’s see what are the beauties of complete market data. The first of many would be that it contains data of others’ orders as well as your own order’s, which means no need for separate API requests.
 
-What’s even better is that you can track your order status by associating orderID in the RECDIVED data via the customized clientOid functionality supported by both KuCoin and KuMex. But you might wonder, why not just tracking the order status using orderID, but applying user-defined clientOid?
+What’s even better is that you can track your order status by associating orderID in the RECDIVED data via the customized clientOid functionality supported by both KuCoin and KuMEX. But you might wonder, why not just tracking the order status using orderID, but applying user-defined clientOid?
 
 Think about it, when you call the AddBuyOrder interface, there indeed will be an orderID rolling back - after L3 pushes over RECEIVED and OPEN. And that means, another thread has already complete the information delivery, while you are still waiting for the original data-push, which is included in the information delivery but couldn’t be identified. Sounds very efficient, huh?
 Plus, L3 data-push is counted as the most accurate data delivery, while RECEIVED is the standard layout for placing an order. Under the circumstance of withdrawing an order, DONE is the standard layout, with the reason will be specified as cancel.
@@ -78,18 +78,15 @@ Now let’s see how L3 address the above-mentioned issues that REST might have d
 4. No need for repeated checking order status by calling getOrderInfo - order status changes will be delivered by L3 data push.
 5. Calling asynchronous order to improve efficiency, associating clientOid and orderId in RECEIVE, won’t be seeing conflicts between different threads.
 6. How do I know my order is in beneficial status - L3 data push will tell you.
-7. Concerns over API frequency control - interface calling frequency will significantly drop, as you only trigger two requests, addOrder and cancelOrder. If, however, under such circumstance, the frequency is still triggered, please do contact KuCoin/KuMex, I am more than just sure that they would like to offer extra support to API user like you.
+7. Concerns over API frequency control - interface calling frequency will significantly drop, as you only trigger two requests, addOrder and cancelOrder. If, however, under such circumstance, the frequency is still triggered, please do contact KuCoin/KuMEX, I am more than just sure that they would like to offer extra support to API user like you.
 8. Ill-timed. The 30 millisecond-latency for GetOrderInfo to deliver feedback, which makes real-time data push and perfect efficiency of implementing new strategy highly unlikely, is now solved, as L3 data push is much faster.
 9. No accessibility to the data of other orders. The issue is now addressed as L3 push full order data, which include every change of each individual order, so that the user could monitor the entire market and make real-time adjustment.
 
 I believe the above-mentioned edges are convincing enough, now the question would be how to make use of L3. Here comes on applicable use case and an SDK.
 
-
-I believe the above-mentioned edges are convincing enough, now the question would be how to make use of L3. Here comes on applicable use case and an SDK.
-
 ## How to make use of L3
 
-With the features of ready-to-use SDK and demo of python (available at https://github.com/Kucoin/kumex-level3-sdk), our L3 is very easy to use. The two major functionalities of SDK are as follows:
+With the features of ready-to-use SDK and demo of Python (available at https://github.com/Kucoin/kumex-level3-sdk), our L3 is very easy to use. The two major functionalities of SDK are as follows:
 
 1. Locally built orderbook is simply ready to use
 
@@ -97,7 +94,7 @@ With the features of ready-to-use SDK and demo of python (available at https://g
 
 Now, please allow me to share the method of application of L3
 
-1. Clone the repository, which includes a set of full realization of Go programming language and python demo, and compile binary program following the readme steps. Or you could download the release binary program compiled by us already. (We have conducted multiple 7*24 tests in Linux production environment, which show excellent stability and functionality, please rest assured to use.)
+1. Clone the repository, which includes a set of full realization of GoLang and Python demo, and compile binary program following the readme steps. Or you could download the release binary program compiled by us already. (We have conducted multiple 7*24 tests in Linux production environment, which show excellent stability and functionality, please rest assured to use.)
 
 2. Complided binary program running with parameters
 
@@ -130,5 +127,5 @@ Now, please allow me to share the method of application of L3
 Given that Step 4 and 5 are involved in placing an order, you will have to deploy your apikey and secret in kumex-level3-sdk/demo/python-demo/tools/config.py
 
 
-This is it, a handbook to make the use of level 3-sdk, pretty straightforward, huh? Come come, give it a shot! Wish you all a wonderful quant-trading adventure on KuMex, and best luck!
+This is it, a handbook to make the use of level 3-sdk, pretty straightforward, huh? Come come, give it a shot! Wish you all a wonderful quant-trading adventure on KuMEX, and best luck!
 )
