@@ -94,7 +94,7 @@ With the features of ready-to-use SDK and demo of Python (available at https://g
 
 Now, please allow me to share the method of application of L3
 
-1. Clone the repository, which includes a set of full realization of GoLang and Python demo, and compile binary program following the readme steps. Or you could download the release binary program compiled by us already. (We have conducted multiple 7*24 tests in Linux production environment, which show excellent stability and functionality, please rest assured to use.)
+1. Clone the repository, which includes a set of full implementation of GoLang and Python demo, and compile binary program following the readme steps. Or you could download the release binary program compiled by us already. (We have conducted multiple 7*24 tests in Linux production environment, which show excellent stability and functionality, please rest assured to use.)
 
 2. Complided binary program running with parameters
 
