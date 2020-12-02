@@ -1,3 +1,9 @@
+# DEPRECATED(弃用)
+
+此项目不再维护，请采用 [https://github.com/Kucoin/kucoin-level3-sdk](https://github.com/Kucoin/kucoin-level3-sdk)
+
+---
+
 # KuMEX Level3 market
 
 ## 入门文档
@@ -20,7 +26,7 @@ go get github.com/shopspring/decimal
 
 ```
 CGO_ENABLED=0 go build -ldflags '-s -w' -o kumex_market kumex_market.go
-``` 
+```
 
 或者直接下载已经编译完成的二进制文件
 
@@ -93,5 +99,4 @@ see:[python use_level3 demo](./demo/python-demo/demo)
     ```
     command: python demo.py
     describe: you sand order always buy1,until your order is match.(easy strategy)
-    ```    
-  
+    ```
