@@ -1,3 +1,9 @@
+# DEPRECATED(弃用)
+
+This repository is deprecated, please use [https://github.com/Kucoin/kucoin-level3-sdk](https://github.com/Kucoin/kucoin-level3-sdk) instead.
+
+---
+
 # KuMEX Level3 market
 
 ## guide
